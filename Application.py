@@ -2,8 +2,7 @@ import datetime
 import time
 
 class Application:
-    def __init__(self, id, company_name, position, date_of_apply, side, status, cv_version, mode, contract_type, job_type):
-        self.id = id
+    def __init__(self, company_name, position, date_of_apply, side, status, cv_version, mode, contract_type, job_type):
         self.company_name = company_name
         self.position = position
         self.date_of_apply = date_of_apply
@@ -104,5 +103,8 @@ class Application:
         result = abs((current_day - apply_day).days)
         return result
 
-app = Application(1, "Company X", "Developer", "2023-12-22", "Internal", "Pending", "v1", "Full-time", "Permanent", "IT")
-print(app.count_days_from_application())
+    
+app0 = Application(1, "Company X", "Developer", "2023-12-22", "Internal", "Pending", "v1", "Full-time", "Permanent", "IT")
+app1 = Application(2, "Company Y", "DeveloperSUPER", "2022-11-20", "Internal", "Pending", "v2", "Part-time", "NoPermanent", "Finance")
+app2 = Application(3, "Company Z", "DeveloperMEGA", "2023-02-01", "Internal", "Pending", "v3", "Part-time", "Permanent", "GameDev")
+
