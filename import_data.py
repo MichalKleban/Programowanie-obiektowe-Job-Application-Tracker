@@ -18,7 +18,6 @@ class Import_data:
     
     def received_data():
         if request.method == 'POST':
-            id = 1
             company_name = request.form['company_name']
             position = request.form['position']
             date_of_apply = request.form['date_of_apply']
@@ -28,11 +27,10 @@ class Import_data:
             mode = request.form['mode']
             contract_type = request.form['contract_type']
             job_type = request.form['job_type']
-            application_data = Import_data(id, company_name, position, date_of_apply, side, status, cv_version, mode, contract_type, job_type)
+            application_data = Import_data(company_name, position, date_of_apply, side, status, cv_version, mode, contract_type, job_type)
 
         return application_data  
-    if __name__ == '__main__':
-        app.run(debug=True)
+
 class Database:
     def __init__(self):
         pass     
@@ -41,7 +39,7 @@ class Database:
     cursor = conn.cursor()
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS Applications (
-            id INTEGER PRIMARY KEY,
+            id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
             company_name TEXT,
             position TEXT,
             date_of_apply DATE,
@@ -53,12 +51,12 @@ class Database:
             job_type TEXT
         )
     ''')
-    date = (Import_data.received_data())
-    cursor.execute('''
+    data = (Import_data.received_data())
+    cursor.execute(f'''
             INSERT INTO Applications (
-                id, company_name, position, 
-                date_of_apply, side, status, cv_version, mode,
-                contract_type, job_type) 
+                id, {data.company_name}, {data.position}, 
+                {data.date_of_apply}, {data.side}, {data.status}, {data.cv_version}, {data.mode},
+                {data.contract_type}, {data.job_type}) 
     ''')
     conn.commit()
     conn.close()
