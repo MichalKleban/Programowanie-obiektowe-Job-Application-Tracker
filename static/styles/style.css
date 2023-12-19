@@ -85,6 +85,16 @@ textarea:not([rows]) {
     border: 1px solid black;
 }
 
+.calendarDialogueBox{
+  border: 1px solid black;
+}
+
+.calendarDialogue{
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
 .calendar-container {
   margin: 0 auto;
   background: #fff;
