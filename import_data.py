@@ -57,3 +57,16 @@ class Import_data:
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ? )''',(data.company_name, data.position, data.date_of_apply, data.site, data.status, data.cv_version, data.mode, data.contract_type, data.job_type))
         conn.commit()
         conn.close()
+
+    def get_applications():
+        database_path = "job_application_tracker.db"
+        conn = sqlite3.connect(database_path)
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM Applications')
+        results = cursor.fetchall()
+        
+        conn.close
+        return results
+        
+        
+

@@ -5,7 +5,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('index.html.jinja')
+    query = Import_data.get_applications()
+    return render_template('index.html.jinja', query=query)
    
 @app.route('/add_job', methods=['GET','POST'])
 def add_job():
