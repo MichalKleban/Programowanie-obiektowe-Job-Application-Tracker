@@ -5,7 +5,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('index.html.jinja')
+    calendarHighlights = Import_data.calendarHighlights()
+    return render_template('index.html.jinja', calendarHighlights=calendarHighlights)
    
 @app.route('/add_job', methods=['GET','POST'])
 def add_job():
