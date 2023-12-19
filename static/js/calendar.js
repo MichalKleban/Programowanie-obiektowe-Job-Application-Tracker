@@ -57,7 +57,7 @@ const manipulate = () => {
 			&& year === new Date().getFullYear()
 			? "active"
 			: "";
-		lit += `<li class="${isToday}"><a href="#">${i}</a></li>`;
+		lit += `<li class="${isToday}"><a onclick="showDialogueWindow('${year}-${month}-${i}')" >${i}</a></li>`;
 	}
 
 	// Loop to add the first dates of the next month
