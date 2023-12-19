@@ -105,3 +105,4 @@ class Application:
         return result
 
 app = Application(1, "Company X", "Developer", "2023-12-22", "Internal", "Pending", "v1", "Full-time", "Permanent", "IT")
+print(app.count_days_from_application())
