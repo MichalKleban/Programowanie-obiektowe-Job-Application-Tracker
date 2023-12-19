@@ -48,7 +48,37 @@ const manipulate = () => {
 			`<li class="inactive">${monthlastdate - i + 1}</li>`;
 	}
 
-	// Loop to add the dates of the current month
+	
+	var inputString = document.getElementById('daysToHighlight').innerHTML;
+
+	// Usuń wszystkie znaki, które nie są cyframi, myślnikiem, ani przecinkiem
+	var cleanedString = inputString.replace(/[^\d,-]/g, '');
+	
+	// Podziel ciąg znaków na tablicę, używając przecinka jako separatora
+	var dataArray = cleanedString.split(',');
+	
+	// Filtruj tylko elementy, które są datami
+	var dateArray = dataArray.filter(function(item) {
+	  // Sprawdź, czy element pasuje do formatu daty YYYY-MM-DD
+	  return /\d{4}-\d{2}-\d{2}/.test(item);
+	});
+
+	console.log(dateArray);
+
+	for (var i = 0; i < dateArray.length; i++) {
+		// Pobieranie elementu o danym ID
+		var element = document.getElementById(dateArray[i]);
+	
+		// Sprawdzenie, czy element został znaleziony
+		if (element) {
+			// Zmiana koloru elementu na różowy
+			element.style.backgroundColor = "pink";
+		} else {
+			console.error("Element o ID " + dateArray[i] + " nie został znaleziony.");
+		}
+	}
+	
+
 	for (let i = 1; i <= lastdate; i++) {
 
 		// Check if the current date is today
@@ -57,7 +87,7 @@ const manipulate = () => {
 			&& year === new Date().getFullYear()
 			? "active"
 			: "";
-		lit += `<li id="${year}-${month}-${i}" class="${isToday}"><a onclick="showDialogueWindow('${year}-${month}-${i}')" >${i}</a></li>`;
+		lit += `<li id="${year}-${month}-${i.toString().padStart(2, '0')}" class="${isToday}"><a onclick="showDialogueWindow('${year}-${month}-${i}')" >${i}</a></li>`;
 	}
 
 	// Loop to add the first dates of the next month
