@@ -5,13 +5,18 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
+<<<<<<< HEAD
     query = Import_data.get_applications()
     return render_template('index.html.jinja', query=query)
+=======
+    calendarHighlights = Import_data.calendarHighlights()
+    return render_template('index.html.jinja', calendarHighlights=calendarHighlights)
+>>>>>>> 2a3ee915310387dca082f736a03c010892866cff
    
 @app.route('/add_job', methods=['GET','POST'])
 def add_job():
     if request.method == "POST":
-        Import_data.create_database()
+        Import_data.insert_into_database()
         return redirect('/')
     else:
         err = "Oops... something went wrong"
