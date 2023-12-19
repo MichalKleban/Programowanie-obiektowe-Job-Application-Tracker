@@ -77,20 +77,11 @@ textarea:not([rows]) {
     grid-template-columns: 2fr 1fr;
 }
 
-.apps {
-    border: 1px solid black;
-}
-
-.schedule {
-    border: 1px solid black;
-}
-
 .calendar-container {
   margin: 0 auto;
   background: #fff;
   width: 30rem;
   border-radius: 10px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
 .calendar-container header {

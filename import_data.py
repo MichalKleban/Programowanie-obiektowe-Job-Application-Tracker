@@ -30,7 +30,7 @@ class Import_data:
 
         return application_data  
     
-    def create_database():
+    def insert_into_database():
             
         conn = sqlite3.connect('job_application_tracker.db')
         cursor = conn.cursor()

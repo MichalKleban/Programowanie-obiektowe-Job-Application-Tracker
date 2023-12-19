@@ -10,7 +10,7 @@ def home():
 @app.route('/add_job', methods=['GET','POST'])
 def add_job():
     if request.method == "POST":
-        Import_data.create_database()
+        Import_data.insert_into_database()
         return redirect('/')
     else:
         err = "Oops... something went wrong"
