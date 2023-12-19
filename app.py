@@ -1,12 +1,13 @@
 from flask import Flask, render_template, redirect, request
 from import_data import Import_data
+import calendarHighlights
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    calendarHighlights = Import_data.calendarHighlights()
-    return render_template('index.html.jinja', calendarHighlights=calendarHighlights)
+    specjalDays = calendarHighlights.calendarHighlights()
+    return render_template('index.html.jinja', daysToHighlight=specjalDays)
    
 @app.route('/add_job', methods=['GET','POST'])
 def add_job():
