@@ -47,36 +47,7 @@ const manipulate = () => {
 		lit +=
 			`<li class="inactive">${monthlastdate - i + 1}</li>`;
 	}
-
 	
-	var inputString = document.getElementById('daysToHighlight').innerHTML;
-
-	// Usuń wszystkie znaki, które nie są cyframi, myślnikiem, ani przecinkiem
-	var cleanedString = inputString.replace(/[^\d,-]/g, '');
-	
-	// Podziel ciąg znaków na tablicę, używając przecinka jako separatora
-	var dataArray = cleanedString.split(',');
-	
-	// Filtruj tylko elementy, które są datami
-	var dateArray = dataArray.filter(function(item) {
-	  // Sprawdź, czy element pasuje do formatu daty YYYY-MM-DD
-	  return /\d{4}-\d{2}-\d{2}/.test(item);
-	});
-
-	console.log(dateArray);
-
-	for (var i = 0; i < dateArray.length; i+=1) {
-		var elementId = dataArray[i];
-		console.log(elementId)
-		var element = document.getElementById(elementId);
-	
-		if (element) {
-			
-			element.style.backgroundColor = "black";
-		} else {
-			console.error("Element o ID " + dateArray[i] + " nie został znaleziony.");
-		}
-	}
 	
 	let twoDigitMonths = ['01','02','03','04','05','06','07','08','09','10','11','12'];
 	let twoDigitDays = ['00','01','02','03','04','05','06','07','08','09','10',
@@ -109,6 +80,44 @@ const manipulate = () => {
 }
 
 manipulate();
+
+
+function highlightDays() {
+	var inputString = document.getElementById('daysToHighlight').innerHTML;
+
+	// Usuń wszystkie znaki, które nie są cyframi, myślnikiem, ani przecinkiem
+	var cleanedString = inputString.replace(/[^\d,-]/g, '');
+	
+	// Podziel ciąg znaków na tablicę, używając przecinka jako separatora
+	var cleanArray = cleanedString.split(',');
+	
+	// Filtruj tylko elementy, które są datami
+	const  dateArray = cleanArray.filter(function(item) {
+	  // Sprawdź, czy element pasuje do formatu daty YYYY-MM-DD
+	  return /\d{4}-\d{2}-\d{2}/.test(item);
+	});
+
+	console.log(dateArray);
+
+	for (var i = 0; i < dateArray.length; i+=1) {
+		var elementId = dateArray[i];
+		console.log(elementId)
+		var element = document.getElementById(elementId);
+
+		if (element) {
+			
+			element.style.borderRadius="50%";
+			element.style.backgroundColor = "rgb(253, 254, 205)";
+			element.style.fontWeight = "bold" 
+		} else {
+			console.error("Element o ID " + dateArray[i] + " nie został znaleziony.");
+		}
+	}
+}
+
+highlightDays()
+
+
 
 // Attach a click event listener to each icon
 prenexIcons.forEach(icon => {

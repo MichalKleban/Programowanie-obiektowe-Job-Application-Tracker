@@ -1,5 +1,5 @@
 const table = document.getElementById('myTable');
-  const tds = table.getElementsByTagName('td');
+const tds = table.getElementsByTagName('td');
 
   for (let i = 0; i < tds.length; i++) {
     const text = tds[i].innerText.trim().toLowerCase();

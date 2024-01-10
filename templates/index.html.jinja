@@ -50,6 +50,7 @@
                             <td>{{ item.8 }}</td>
                             <td>{{ item.9 }}</td>
                             <!-- Add more cells as needed -->
+
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -58,7 +59,7 @@
             <span id="test"></span>
             <button class="button-36" id="toggleForm">Add Application</button><br>
             <form action="/add_job" method="post" style="" id="applicationForm" class="hidden">
-                <label for="company_name">Company name:</label>
+                <label for="company_name">Company name:</label><br>
                 <input type="text" id="company_name" name="company_name" required><br><br>
 
                 <label for="position">Position:</label><br>
@@ -76,7 +77,6 @@
                     <option value="Successful">Successful</option>
                     <option value="Pending">Pending</option>
                     <option value="Declined">Declined</option>
-                    <option value="Meeting">Waiting for meeting</option>
                 </select><br><br>
 
                 <label for="cv_version">Cv_version:</label><br>
@@ -119,7 +119,7 @@
 
                 <header class="calendar-header">
                     <p class="calendar-current-date"></p>
-                    <div class="calendar-navigation">
+                    <div class="calendar-navigation" onclick="highlightDays()">
                         <span id="calendar-prev"
                             class="material-symbols-rounded">
                             chevron_left
@@ -150,14 +150,18 @@
                 <script src="{{ url_for('static',filename='js/edit.js') }}"></script>
                 <script src="{{ url_for('static',filename='js/appStatus.js') }}"></script>
 
+
             </div>
 
         </div>
         
     </div>
     <div class="calendarDialogueBox">
-        <h1>Calendar details</h1>
+    
         <div class="calendarDialogue">
+            <br><table id="info">
+                
+            </table>
         </div>
     </div>
     
