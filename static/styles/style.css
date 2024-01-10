@@ -77,9 +77,15 @@ textarea:not([rows]) {
     grid-template-columns: 2fr 1fr;
 }
 
+/* Table container styling */
+.table-container {
+  margin-top: 3rem;
+  height: 30rem; /* Set your preferred fixed height */
+  overflow-y: auto;
+}
+
 /* Basic table styling */
 table {
-  margin-top: 3rem;
   border-collapse: collapse;
   width: 100%;
 }
@@ -96,45 +102,32 @@ th {
   color: #333333;
 }
 
+thead {
+  display: table;
+}
+
+tbody {
+  display: block;
+  max-height: 23rem; /* Adjust the height according to your needs */
+  overflow-y: auto;
+}
+
+tbody::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+/* Customize scrollbar */
+tbody::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
 tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
 tr:hover {
-  background-color: #d3bffd;
-}
-
-/* Responsive table for smaller screens */
-@media screen and (max-width: 600px) {
-  table {
-      border: 0;
-  }
-
-  table thead th {
-      display: none;
-  }
-
-  table tr {
-      margin-bottom: 10px;
-      display: block;
-      border: 1px solid #dddddd;
-  }
-
-  table td {
-      display: block;
-      text-align: right;
-      border: none;
-  }
-
-  table td::before {
-      content: attr(data-label);
-      font-weight: bold;
-      display: inline-block;
-      width: 50%;
-      margin-left: -50%;
-      padding-right: 5px;
-      text-align: left;
-  }
+  background-color: #f1f1f1;
 }
 
 .calendarDialogue{

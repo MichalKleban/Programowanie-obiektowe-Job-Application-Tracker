@@ -19,24 +19,25 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             {% endif %}
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Company </th>
-                        <th>Position </th>
-                        <th>Date of apply</th>
-                        <th>Site </th>
-                        <th>Status </th>
-                        <th>CV Version</th>
-                        <th>Mode </th>
-                        <th>Contract type</th>
-                        <th>Job level</th>
-                        <!-- Add more headers as needed -->
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Static header row -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Company </th>
+                            <th>Position </th>
+                            <th>Date of apply</th>
+                            <th>Site </th>
+                            <th>Status </th>
+                            <th>CV Version</th>
+                            <th>Mode </th>
+                            <th>Contract type</th>
+                            <th>Job level</th>
+                            <!-- Add more headers as needed -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Static header row -->
 
                     <!-- Dynamic rows from the query -->
                     {% for item in query %}
@@ -56,23 +57,23 @@
                     {% endfor %}
                 </tbody>
             </table>
-            <button class="button-36" role="button" id="toggleForm">Add appliaction</button><br>
-            <form action="/add_job" method="post" style="" id="applicationForm" class="hidden">
+            <h2>Add appliaction</h2><br>
+            <form action="/add_job" method="post" style="">
                 <label for="company_name">Company name:</label>
-                <input type="text" id="company_name" name="company_name"><br><br>
+                <input type="text" id="company_name" name="company_name" required><br><br>
 
                 <label for="position">Position:</label>
-                <input type="text" id="position" name="position"><br><br>
+                <input type="text" id="position" name="position" required><br><br>
 
                 <label for="date_of_apply">Date of apply:</label>
-                <input type="date" name="date_of_apply"><br><br>
+                <input type="date" name="date_of_apply" required><br><br>
 
                 <label for="site">Site:</label>
-                <input type="text" id="site" name="site"><br><br>
+                <input type="text" id="site" name="site" required><br><br>
                 
                 <label for="status">Status:</label><br>
-                <select name="status" id="status">
-                    <option value="Choose option" disabled selected></option>
+                <select name="status" id="status" required>
+                    <option value="" disabled selected></option>
                     <option value="Succesfull">Succesfull</option>
                     <option value="Pending">Pending</option>
                     <option value="Declined">Declined</option>
@@ -80,19 +81,19 @@
                 </select><br><br>
 
                 <label for="cv_version">Cv_version:</label><br>
-                <input type="text" id="cv_version" name="cv_version"><br><br>
+                <input type="text" id="cv_version" name="cv_version" required><br><br>
                 
                 <label for="mode">Mode:</label><br>
-                <select name="mode" id="mode">
-                    <option value="Choose option" disabled selected></option>
+                <select name="mode" id="mode" required>
+                    <option value="" disabled selected></option>
                     <option value="Stationary">Stationary</option>
                     <option value="Hybrid">Hybrid</option>
                     <option value="Remote">Remote</option>
                 </select><br><br>
                 
                 <label for="contract_type">Contract_type:</label><br>
-                <select name="contract_type" id="contract_type">
-                    <option value="Choose option" disabled selected></option>
+                <select name="contract_type" id="contract_type" required>
+                    <option value="" disabled selected></option>
                     <option value="B2B">B2B</option>
                     <option value="Trial">Trial</option>
                     <option value="Contract work">Contract work</option>
@@ -101,8 +102,8 @@
                 </select><br><br>
                 
                 <label for="job_level">Job level:</label><br>
-                <select name="job_level" id="job_level">
-                    <option value="Choose option" disabled selected></option>
+                <select name="job_level" id="job_level" required>
+                    <option value="" disabled selected></option>
                     <option value="Junior">Junior</option>
                     <option value="Mid">Mid</option>
                     <option value="Senior">Senior</option>
