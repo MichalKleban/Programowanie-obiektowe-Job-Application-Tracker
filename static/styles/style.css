@@ -77,30 +77,74 @@ textarea:not([rows]) {
     grid-template-columns: 2fr 1fr;
 }
 
-.apps {
-    border: 1px solid black;
+/* Basic table styling */
+table {
+  margin-top: 3rem;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-.schedule {
-    border: 1px solid black;
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 12px;
 }
 
-.calendarDialogueBox{
-  border: 1px solid black;
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333333;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #d3bffd;
+}
+
+/* Responsive table for smaller screens */
+@media screen and (max-width: 600px) {
+  table {
+      border: 0;
+  }
+
+  table thead th {
+      display: none;
+  }
+
+  table tr {
+      margin-bottom: 10px;
+      display: block;
+      border: 1px solid #dddddd;
+  }
+
+  table td {
+      display: block;
+      text-align: right;
+      border: none;
+  }
+
+  table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      display: inline-block;
+      width: 50%;
+      margin-left: -50%;
+      padding-right: 5px;
+      text-align: left;
+  }
 }
 
 .calendarDialogue{
-  background: #fff;
   border-radius: 10px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
 .calendar-container {
   margin: 0 auto;
-  background: #fff;
-  width: 30rem;
+  width: 25rem;
   border-radius: 10px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
 .calendar-container header {
