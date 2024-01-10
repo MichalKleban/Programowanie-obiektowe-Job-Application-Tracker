@@ -55,8 +55,8 @@
                     </tbody>
                 </table>
             </div>
-            <h2>Add appliaction</h2><br>
-            <form action="/add_job" method="post" style="">
+            <button class="button-36" id="toggleForm">Add Application</button><br>
+            <form action="/add_job" method="post" style="" id="applicationForm">
                 <label for="company_name">Company name:</label>
                 <input type="text" id="company_name" name="company_name" required><br><br>
 
@@ -144,6 +144,7 @@
                 
                 <script src="{{ url_for('static',filename='js/calendarDialogueBox.js') }}"></script>
                 <script src="{{ url_for('static',filename='js/calendar.js') }}"></script>
+                <script src="{{ url_for('static',filename='js/application.js') }}"></script>
 
             </div>
 
