@@ -4,3 +4,5 @@
 # Ignoruj pliki z rozszerzeniem .pyc
 *.pyc
 __pycache__/
+
+*.png
