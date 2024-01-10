@@ -78,6 +78,10 @@ const manipulate = () => {
 		}
 	}
 	
+	let twoDigitMonths = ['01','02','03','04','05','06','07','08','09','10','11','12'];
+	let twoDigitDays = ['00','01','02','03','04','05','06','07','08','09','10',
+	'11','12','13','14','15','16','17','18','19','20',
+	'21','22','23','24','25','26','27','28','29','30','31','420 lol cos się zepsuło XD'];
 
 	for (let i = 1; i <= lastdate; i++) {
 
@@ -87,7 +91,7 @@ const manipulate = () => {
 			&& year === new Date().getFullYear()
 			? "active"
 			: "";
-		lit += `<li id="${year}-${month}-${i.toString().padStart(2, '0')}" class="${isToday}"><a onclick="showDialogueWindow('${year}-${month}-${i}')" >${i}</a></li>`;
+		lit += `<li id="${year}-${twoDigitMonths[month]}-${i.toString().padStart(2, '0')}" class="${isToday}"><a onclick="showDialogueWindow('${year}-${twoDigitMonths[month]}-${twoDigitDays[i]}')" >${i}</a></li>`;
 	}
 
 	// Loop to add the first dates of the next month
