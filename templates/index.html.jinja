@@ -73,10 +73,10 @@
                 <label for="status">Status:</label><br>
                 <select name="status" id="status" required>
                     <option value="" disabled selected></option>
-                    <option value="Succesfull">Succesfull</option>
+                    <option value="Successful">Successful</option>
                     <option value="Pending">Pending</option>
                     <option value="Declined">Declined</option>
-                    <option value="Declined">Waiting for meeting</option>
+                    <option value="Meeting">Waiting for meeting</option>
                 </select><br><br>
 
                 <label for="cv_version">Cv_version:</label><br>
@@ -148,6 +148,7 @@
                 <script src="{{ url_for('static',filename='js/calendar.js') }}"></script>
                 <script src="{{ url_for('static',filename='js/application.js') }}"></script>
                 <script src="{{ url_for('static',filename='js/edit.js') }}"></script>
+                <script src="{{ url_for('static',filename='js/appStatus.js') }}"></script>
 
             </div>
 

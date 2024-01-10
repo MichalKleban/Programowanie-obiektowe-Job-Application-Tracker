@@ -131,6 +131,19 @@ tr:hover {
   background-color: #f1f1f1;
 }
 
+.success {
+  background-color: green;
+}
+.pending {
+  background-color: yellow;
+}
+.declined {
+  background-color: red;
+}
+.waiting {
+  background-color: blue;
+}
+
 .calendarDialogue{
   border-radius: 10px;
 }
