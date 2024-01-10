@@ -65,14 +65,14 @@ const manipulate = () => {
 
 	console.log(dateArray);
 
-	for (var i = 0; i < dateArray.length; i++) {
-		// Pobieranie elementu o danym ID
-		var element = document.getElementById(dateArray[i]);
+	for (var i = 0; i < dateArray.length; i+=1) {
+		var elementId = dataArray[i];
+		console.log(elementId)
+		var element = document.getElementById(elementId);
 	
-		// Sprawdzenie, czy element został znaleziony
 		if (element) {
-			// Zmiana koloru elementu na różowy
-			element.style.backgroundColor = "pink";
+			
+			element.style.backgroundColor = "black";
 		} else {
 			console.error("Element o ID " + dateArray[i] + " nie został znaleziony.");
 		}
