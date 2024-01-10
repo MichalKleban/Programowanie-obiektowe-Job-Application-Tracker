@@ -11,7 +11,7 @@ class Application:
         self.cv_version = cv_version
         self.mode = mode
         self.contract_type = contract_type
-        self.job_type = job_type
+        self.job_level = job_type
 
     @property
     def id(self):

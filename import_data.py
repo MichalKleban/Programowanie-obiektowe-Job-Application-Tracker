@@ -45,14 +45,14 @@ class Import_data:
                     Cv_version TEXT,
                     Mode TEXT,
                     Contract_type TEXT, 
-                    job_level TEXT
+                    Job_level TEXT
                 )
             ''')
         data = Import_data.received_data()
         cursor.execute('''
                 INSERT INTO Applications (
                     Company_name, Position, Date_of_apply, Site, 
-                    Status, Cv_version, Mode, Contract_type, job_level
+                    Status, Cv_version, Mode, Contract_type, Job_level
                 )
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ? )''',(data.company_name, data.position, data.date_of_apply, data.site, data.status, data.cv_version, data.mode, data.contract_type, data.job_level))
         conn.commit()
