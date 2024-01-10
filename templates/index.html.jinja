@@ -19,43 +19,45 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             {% endif %}
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Company </th>
-                        <th>Position </th>
-                        <th>Date of apply</th>
-                        <th>Site </th>
-                        <th>Status </th>
-                        <th>CV Version</th>
-                        <th>Mode </th>
-                        <th>Contract type</th>
-                        <th>Job level</th>
-                        <!-- Add more headers as needed -->
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Static header row -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Company </th>
+                            <th>Position </th>
+                            <th>Date of apply</th>
+                            <th>Site </th>
+                            <th>Status </th>
+                            <th>CV Version</th>
+                            <th>Mode </th>
+                            <th>Contract type</th>
+                            <th>Job level</th>
+                            <!-- Add more headers as needed -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Static header row -->
 
-                    <!-- Dynamic rows from the query -->
-                    {% for item in query %}
-                    <tr>
-                        <td>{{ item.0 }}</td>
-                        <td>{{ item.1 }}</td>
-                        <td>{{ item.2 }}</td>
-                        <td>{{ item.3 }}</td>
-                        <td>{{ item.4 }}</td>
-                        <td>{{ item.5 }}</td>
-                        <td>{{ item.6 }}</td>
-                        <td>{{ item.7 }}</td>
-                        <td>{{ item.8 }}</td>
-                        <td>{{ item.9 }}</td>
-                        <!-- Add more cells as needed -->
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+                        <!-- Dynamic rows from the query -->
+                        {% for item in query %}
+                        <tr>
+                            <td>{{ item.0 }}</td>
+                            <td>{{ item.1 }}</td>
+                            <td>{{ item.2 }}</td>
+                            <td>{{ item.3 }}</td>
+                            <td>{{ item.4 }}</td>
+                            <td>{{ item.5 }}</td>
+                            <td>{{ item.6 }}</td>
+                            <td>{{ item.7 }}</td>
+                            <td>{{ item.8 }}</td>
+                            <td>{{ item.9 }}</td>
+                            <!-- Add more cells as needed -->
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
             <h2>Add appliaction</h2><br>
             <form action="/add_job" method="post" style="">
                 <label for="company_name">Company name:</label>
