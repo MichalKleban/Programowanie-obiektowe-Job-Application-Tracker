@@ -3,4 +3,4 @@
 
 # Ignoruj pliki z rozszerzeniem .pyc
 *.pyc
-_pychache/
+__pycache__/
