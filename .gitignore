@@ -1,0 +1,5 @@
+# Ignoruj plik job_application_tracker.db
+job_application_tracker.db
+
+# Ignoruj pliki z rozszerzeniem .pyc
+*.pyc
