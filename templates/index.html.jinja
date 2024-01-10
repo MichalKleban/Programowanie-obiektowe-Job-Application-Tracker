@@ -20,7 +20,7 @@
                 </div>
             {% endif %}
             <div class="table-container">
-                <table>
+                <table id="myTable">
                     <tbody>
                         <tr>
                             <th>ID</th>
@@ -38,7 +38,7 @@
 
                         <!-- Dynamic rows from the query -->
                         {% for item in query %}
-                        <tr>
+                        <tr id="myRow{{item.0}}" onclick="edit_application({{item.0}})">
                             <td>{{ item.0 }}</td>
                             <td>{{ item.1 }}</td>
                             <td>{{ item.2 }}</td>
@@ -55,6 +55,7 @@
                     </tbody>
                 </table>
             </div>
+            <span id="test"></span>
             <button class="button-36" id="toggleForm">Add Application</button><br>
             <form action="/add_job" method="post" style="" id="applicationForm">
                 <label for="company_name">Company name:</label><br>
@@ -64,7 +65,7 @@
                 <input type="text" id="position" name="position" required><br><br>
 
                 <label for="date_of_apply">Date of apply:</label><br>
-                <input type="date" name="date_of_apply" required><br><br>
+                <input type="date" id="dateofapply" name="date_of_apply" required><br><br>
 
                 <label for="site">Site:</label><br>
                 <input type="text" id="site" name="site" required><br><br>
@@ -107,7 +108,8 @@
                     <option value="Senior">Senior</option>
                 </select><br><br>
 
-                <input type="submit" value="Add Job Listing">
+                <input type="submit" value="Save">
+                <input type="submit" value="Update">
             </form>
         </div>
         <div class="schedule">
@@ -145,6 +147,7 @@
                 <script src="{{ url_for('static',filename='js/calendarDialogueBox.js') }}"></script>
                 <script src="{{ url_for('static',filename='js/calendar.js') }}"></script>
                 <script src="{{ url_for('static',filename='js/application.js') }}"></script>
+                <script src="{{ url_for('static',filename='js/edit.js') }}"></script>
 
             </div>
 

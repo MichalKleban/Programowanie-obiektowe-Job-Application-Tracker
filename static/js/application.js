@@ -7,5 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleButton.addEventListener("click", function () {
         // Toggle the "hidden" class to show/hide the form
         form.classList.toggle("hidden");
+        document.getElementById("applicationForm").action = "/add_job"
     });
 });

@@ -67,6 +67,26 @@ class Import_data:
         
         conn.close
         return results
-        
-        
+    
+    def update_database():
+        data = Import_data.received_data()
+        conn = sqlite3.connect('job_application_tracker.db')
+        sql = '''
+            UPDATE Applications
+                    SET Company_name = ?,
+                        Position = ?,
+                        Date_of_apply = ?,
+                        Site = ?,
+                        Status = ?,
+                        Cv_version = ?,
+                        Mode = ?,
+                        Contract_type = ?, 
+                        Job_level = ?
+                    WHERE Company_name = ? AND Position = ? AND Date_of_apply = ?
+        '''
+        task = (data.company_name, data.position, data.date_of_apply, data.site, data.status, data.cv_version, data.mode, data.contract_type, data.job_level, data.company_name, data.position, data.date_of_apply)
+        conn.execute(sql , task)
+        print(data.company_name, data.position, data.date_of_apply, data.site, data.status, data.cv_version, data.mode, data.contract_type, data.job_level)
 
+        conn.commit()
+        conn.close()
