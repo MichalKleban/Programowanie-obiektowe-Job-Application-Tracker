@@ -3,7 +3,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 class Import_data:
-    def __init__(self, company_name, position, date_of_apply, site, status, cv_version, mode, contract_type, job_type):
+    def __init__(self, company_name, position, date_of_apply, site, status, cv_version, mode, contract_type, job_level):
         self.company_name = company_name
         self.position = position
         self.date_of_apply = date_of_apply
@@ -12,7 +12,7 @@ class Import_data:
         self.cv_version = cv_version
         self.mode = mode
         self.contract_type = contract_type
-        self.job_type = job_type
+        self.job_level = job_level
         
     @app.route('/', methods=['POST', 'GET'])
     def received_data():
@@ -25,8 +25,8 @@ class Import_data:
         cv_version = request.form['cv_version']
         mode = request.form['mode']
         contract_type = request.form['contract_type']
-        job_type = request.form['job_type']
-        application_data = Import_data(company_name, position, date_of_apply, site, status, cv_version, mode, contract_type, job_type)
+        job_level = request.form['job_level']
+        application_data = Import_data(company_name, position, date_of_apply, site, status, cv_version, mode, contract_type, job_level)
 
         return application_data  
     
@@ -45,16 +45,16 @@ class Import_data:
                     Cv_version TEXT,
                     Mode TEXT,
                     Contract_type TEXT, 
-                    Job_type TEXT
+                    job_level TEXT
                 )
             ''')
         data = Import_data.received_data()
         cursor.execute('''
                 INSERT INTO Applications (
                     Company_name, Position, Date_of_apply, Site, 
-                    Status, Cv_version, Mode, Contract_type, Job_type
+                    Status, Cv_version, Mode, Contract_type, job_level
                 )
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ? )''',(data.company_name, data.position, data.date_of_apply, data.site, data.status, data.cv_version, data.mode, data.contract_type, data.job_type))
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ? )''',(data.company_name, data.position, data.date_of_apply, data.site, data.status, data.cv_version, data.mode, data.contract_type, data.job_level))
         conn.commit()
         conn.close()
 
