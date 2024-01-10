@@ -80,8 +80,9 @@ textarea:not([rows]) {
 /* Table container styling */
 .table-container {
   margin-top: 3rem;
-  height: 30rem; /* Set your preferred fixed height */
+  height: 26rem; /* Set your preferred fixed height */
   overflow-y: auto;
+  width: 100%;
 }
 
 /* Basic table styling */
@@ -108,7 +109,7 @@ thead {
 
 tbody {
   display: block;
-  max-height: 23rem; /* Adjust the height according to your needs */
+  /* max-height: 100%; Adjust the height according to your needs */
   overflow-y: auto;
 }
 
