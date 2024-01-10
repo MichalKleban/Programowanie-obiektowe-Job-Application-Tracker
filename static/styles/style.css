@@ -87,13 +87,13 @@ textarea:not([rows]) {
 /* Basic table styling */
 table {
   border-collapse: collapse;
-  width: 100%;
 }
 
 th, td {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 12px;
+ 
 }
 
 th {
@@ -108,7 +108,7 @@ thead {
 
 tbody {
   display: block;
-  max-height: 23rem; /* Adjust the height according to your needs */
+  max-height: 26rem; /* Adjust the height according to your needs */
   overflow-y: auto;
 }
 
@@ -127,7 +127,7 @@ tr:nth-child(even) {
 }
 
 tr:hover {
-  background-color: #f1f1f1;
+  background-color: #d3c5ef;
 }
 
 .calendarDialogue{
