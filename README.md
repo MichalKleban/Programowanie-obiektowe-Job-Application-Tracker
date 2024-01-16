@@ -17,11 +17,3 @@ The Job Application Tracker is a Python-based application designed to help users
    `` pip install -r requirements.txt ``
 3. Run the application.
    `` python app.py ``
-
-## Usage Example
-
-```python
-# Sample code snippet demonstrating how to use the Job Application Tracker:
-
-# TODO: Add example code here
-```
